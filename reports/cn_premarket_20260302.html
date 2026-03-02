@@ -69,7 +69,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <h1>🇨🇳 A股盘前日报</h1>
   <p>
     <span class="badge">📅 2026-03-02</span>
-    <span class="badge">🕙 2026-03-02 19:40 北京时间</span>
+    <span class="badge">🕙 2026-03-02 19:42 北京时间</span>
     <span class="badge">A股 9:30 开盘</span>
   </p>
 </div>
@@ -77,11 +77,35 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <div class="card">
   <div class="card-header"><div class="icon icon-red">📈</div><h2>四大指数概览（昨收）</h2></div>
-  <div class="index-grid"></div>
+  <div class="index-grid">
+            <div class="index-card">
+                <div class="index-name">上证综指</div>
+                <div class="index-price" style="color:#1e8e3e">4,182.59</div>
+                <div class="index-chg" style="color:#1e8e3e">▲0.47%</div>
+                <div class="index-sub">周<span style='color:#1e8e3e'>▲2.46%</span> 月<span style='color:#1e8e3e'>▲1.12%</span></div>
+            </div>
+            <div class="index-card">
+                <div class="index-name">深证成指</div>
+                <div class="index-price" style="color:#c5221f">14,465.79</div>
+                <div class="index-chg" style="color:#c5221f">▼0.20%</div>
+                <div class="index-sub">周<span style='color:#1e8e3e'>▲2.59%</span> 月<span style='color:#1e8e3e'>▲0.18%</span></div>
+            </div>
+            <div class="index-card">
+                <div class="index-name">沪深300</div>
+                <div class="index-price" style="color:#1e8e3e">4,728.67</div>
+                <div class="index-chg" style="color:#1e8e3e">▲0.38%</div>
+                <div class="index-sub">周<span style='color:#1e8e3e'>▲1.46%</span> 月<span style='color:#1e8e3e'>▲0.56%</span></div>
+            </div>
+            <div class="index-card">
+                <div class="index-name">创业板指</div>
+                <div class="index-price" style="color:#c5221f">3,294.16</div>
+                <div class="index-chg" style="color:#c5221f">▼0.49%</div>
+                <div class="index-sub">周<span style='color:#1e8e3e'>▲0.56%</span> 月<span style='color:#c5221f'>▼1.65%</span></div>
+            </div></div>
 </div>
 
 <div class="card">
-  <div class="card-header"><div class="icon icon-blue">🔍</div><h2>全市场扫描（10 只标的）</h2></div>
+  <div class="card-header"><div class="icon icon-blue">🔍</div><h2>全市场扫描（20 只标的）</h2></div>
   <div style="overflow-x:auto">
   <table class="scan-table">
     <thead><tr>
@@ -89,6 +113,46 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <th>RSI14</th><th>MACD柱</th><th>距52W高</th><th>评分</th>
     </tr></thead>
     <tbody><tr>
+                <td><strong>上证综指</strong><br><span style='color:#999;font-size:12px'>SINA:SH000001</span></td>
+                <td>¥4182.59</td>
+                <td style="color:#1e8e3e">+0.47%</td>
+                <td style="color:#1e8e3e">+2.46%</td>
+                <td style="color:#1e8e3e">+1.12%</td>
+                <td style="color:#333">74.2</td>
+                <td style="color:#1e8e3e">+3.1258</td>
+                <td style="color:#1e8e3e">-0.2%</td>
+                <td><span style="background:#e37400;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px">3分</span></td>
+            </tr><tr>
+                <td><strong>深证成指</strong><br><span style='color:#999;font-size:12px'>SINA:SZ399001</span></td>
+                <td>¥14465.79</td>
+                <td style="color:#c5221f">-0.20%</td>
+                <td style="color:#1e8e3e">+2.59%</td>
+                <td style="color:#1e8e3e">+0.18%</td>
+                <td style="color:#333">69.1</td>
+                <td style="color:#1e8e3e">+18.1688</td>
+                <td style="color:#1e8e3e">-0.5%</td>
+                <td><span style="background:#e37400;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px">3分</span></td>
+            </tr><tr>
+                <td><strong>沪深300</strong><br><span style='color:#999;font-size:12px'>SINA:SH000300</span></td>
+                <td>¥4728.67</td>
+                <td style="color:#1e8e3e">+0.38%</td>
+                <td style="color:#1e8e3e">+1.46%</td>
+                <td style="color:#1e8e3e">+0.56%</td>
+                <td style="color:#333">64.5</td>
+                <td style="color:#1e8e3e">+1.8912</td>
+                <td style="color:#1e8e3e">-2.2%</td>
+                <td><span style="background:#e37400;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px">3分</span></td>
+            </tr><tr>
+                <td><strong>创业板指</strong><br><span style='color:#999;font-size:12px'>SINA:SZ399006</span></td>
+                <td>¥3294.16</td>
+                <td style="color:#c5221f">-0.49%</td>
+                <td style="color:#1e8e3e">+0.56%</td>
+                <td style="color:#c5221f">-1.65%</td>
+                <td style="color:#333">52.8</td>
+                <td style="color:#c5221f">-2.4625</td>
+                <td style="color:#1e8e3e">-3.6%</td>
+                <td><span style="background:#999;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px">1分</span></td>
+            </tr><tr>
                 <td><strong>贵州茅台</strong><br><span style='color:#999;font-size:12px'>600519.CN</span></td>
                 <td>¥1455.02</td>
                 <td style="color:#c5221f">-0.76%</td>
@@ -179,15 +243,75 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
                 <td style="color:#c5221f">-15.9%</td>
                 <td><span style="background:#e37400;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px">3分</span></td>
             </tr><tr>
+                <td><strong>五粮液</strong><br><span style='color:#999;font-size:12px'>SINA:SZ000858</span></td>
+                <td>¥103.22</td>
+                <td style="color:#c5221f">-0.80%</td>
+                <td style="color:#c5221f">-2.68%</td>
+                <td style="color:#1e8e3e">+0.22%</td>
+                <td style="color:#e37400">31.9</td>
+                <td style="color:#c5221f">-0.2044</td>
+                <td style="color:#c5221f">-24.8%</td>
+                <td><span style="background:#e37400;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px">3分</span></td>
+            </tr><tr>
+                <td><strong>宁德时代</strong><br><span style='color:#999;font-size:12px'>SINA:SZ300750</span></td>
+                <td>¥340.22</td>
+                <td style="color:#c5221f">-0.52%</td>
+                <td style="color:#c5221f">-6.88%</td>
+                <td style="color:#c5221f">-1.95%</td>
+                <td style="color:#333">44.4</td>
+                <td style="color:#c5221f">-1.7993</td>
+                <td style="color:#c5221f">-19.8%</td>
+                <td><span style="background:#999;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px">2分</span></td>
+            </tr><tr>
+                <td><strong>美的集团</strong><br><span style='color:#999;font-size:12px'>SINA:SZ000333</span></td>
+                <td>¥77.45</td>
+                <td style="color:#c5221f">-1.51%</td>
+                <td style="color:#c5221f">-2.02%</td>
+                <td style="color:#1e8e3e">+0.87%</td>
+                <td style="color:#333">47.8</td>
+                <td style="color:#c5221f">-0.1094</td>
+                <td style="color:#1e8e3e">-6.9%</td>
+                <td><span style="background:#999;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px">1分</span></td>
+            </tr><tr>
+                <td><strong>海康威视</strong><br><span style='color:#999;font-size:12px'>SINA:SZ002415</span></td>
+                <td>¥31.16</td>
+                <td style="color:#c5221f">-0.89%</td>
+                <td style="color:#c5221f">-3.77%</td>
+                <td style="color:#c5221f">-2.47%</td>
+                <td style="color:#333">43.2</td>
+                <td style="color:#c5221f">-0.1971</td>
+                <td style="color:#c5221f">-10.4%</td>
+                <td><span style="background:#999;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px">2分</span></td>
+            </tr><tr>
+                <td><strong>东方财富</strong><br><span style='color:#999;font-size:12px'>SINA:SZ300059</span></td>
+                <td>¥21.95</td>
+                <td style="color:#c5221f">-2.53%</td>
+                <td style="color:#c5221f">-1.88%</td>
+                <td style="color:#c5221f">-5.79%</td>
+                <td style="color:#e37400">39.4</td>
+                <td style="color:#c5221f">-0.0343</td>
+                <td style="color:#c5221f">-25.2%</td>
+                <td><span style="background:#e37400;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px">4分</span></td>
+            </tr><tr>
                 <td><strong>平安银行</strong><br><span style='color:#999;font-size:12px'>SINA:SZ000001</span></td>
                 <td>¥10.85</td>
                 <td style="color:#c5221f">-0.46%</td>
                 <td style="color:#c5221f">-0.55%</td>
                 <td style="color:#c5221f">-1.27%</td>
                 <td style="color:#333">49.2</td>
-                <td style="color:#1e8e3e">+0.0054</td>
-                <td style="color:#c5221f">-18.6%</td>
+                <td style="color:#1e8e3e">+0.0053</td>
+                <td style="color:#c5221f">-17.1%</td>
                 <td><span style="background:#e37400;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px">3分</span></td>
+            </tr><tr>
+                <td><strong>比亚迪</strong><br><span style='color:#999;font-size:12px'>SINA:SZ002594</span></td>
+                <td>¥96.79</td>
+                <td style="color:#1e8e3e">+8.36%</td>
+                <td style="color:#1e8e3e">+7.22%</td>
+                <td style="color:#1e8e3e">+3.35%</td>
+                <td style="color:#333">76.2</td>
+                <td style="color:#1e8e3e">+0.5861</td>
+                <td style="color:#c5221f">-29.7%</td>
+                <td><span style="background:#e37400;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px">4分</span></td>
             </tr></tbody>
   </table>
   </div>
@@ -287,42 +411,42 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <div class="stock-section-header">
     <span class="stock-badge">🥉 推荐#3</span>
     <div>
-      <div style="font-size:20px;font-weight:bold">中国平安</div>
-      <div style="color:var(--text2);font-size:13px">A股: 601318.CN · RSI=33.5超卖 · 近布林下轨</div>
+      <div style="font-size:20px;font-weight:bold">东方财富</div>
+      <div style="color:var(--text2);font-size:13px">A股: SINA:SZ300059 · RSI=39.4超卖 · 距高-25.2% · 近布林下轨</div>
     </div>
     <div class="stock-price-box" style="margin-left:auto">
-      <div class="sp down">¥63.09</div>
-      <div style="color:#ea4335;font-size:13px"><span style='color:#c5221f'>▼0.65%</span> 昨收</div>
+      <div class="sp down">¥21.95</div>
+      <div style="color:#ea4335;font-size:13px"><span style='color:#c5221f'>▼2.53%</span> 昨收</div>
     </div>
   </div>
   <div class="section-title">关键行情数据</div>
   <div class="indicator-grid">
-    <div class="ind-item"><div class="il">最新价</div><div class="iv">¥63.09</div></div>
-    <div class="ind-item"><div class="il">昨收</div><div class="iv">¥63.50</div></div>
-    <div class="ind-item"><div class="il">52周最高</div><div class="iv">¥74.88</div></div>
-    <div class="ind-item"><div class="il">52周最低</div><div class="iv">¥47.00</div></div>
-    <div class="ind-item"><div class="il">距高点</div><div class="iv down">-15.7%</div></div>
-    <div class="ind-item"><div class="il">日涨跌</div><div class="iv"><span style='color:#c5221f'>▼0.65%</span></div></div>
-    <div class="ind-item"><div class="il">周涨跌</div><div class="iv"><span style='color:#c5221f'>▼5.18%</span></div></div>
-    <div class="ind-item"><div class="il">月涨跌</div><div class="iv"><span style='color:#c5221f'>▼2.64%</span></div></div>
-    <div class="ind-item"><div class="il">年涨跌</div><div class="iv"><span style='color:#1e8e3e'>▲23.66%</span></div></div>
-    <div class="ind-item"><div class="il">RSI(14)</div><div class="iv"><span style='color:#e37400'>33.5 超卖</span></div></div>
-    <div class="ind-item"><div class="il">MACD柱</div><div class="iv down">-0.4257 死叉</div></div>
-    <div class="ind-item"><div class="il">布林带位置</div><div class="iv">6.6%</div></div>
-    <div class="ind-item"><div class="il">成交量</div><div class="iv">63,301,213</div></div>
-    <div class="ind-item"><div class="il">数据日期</div><div class="iv">2026-02-27</div></div>
+    <div class="ind-item"><div class="il">最新价</div><div class="iv">¥21.95</div></div>
+    <div class="ind-item"><div class="il">昨收</div><div class="iv">¥22.52</div></div>
+    <div class="ind-item"><div class="il">52周最高</div><div class="iv">¥29.36</div></div>
+    <div class="ind-item"><div class="il">52周最低</div><div class="iv">¥18.12</div></div>
+    <div class="ind-item"><div class="il">距高点</div><div class="iv down">-25.2%</div></div>
+    <div class="ind-item"><div class="il">日涨跌</div><div class="iv"><span style='color:#c5221f'>▼2.53%</span></div></div>
+    <div class="ind-item"><div class="il">周涨跌</div><div class="iv"><span style='color:#c5221f'>▼1.88%</span></div></div>
+    <div class="ind-item"><div class="il">月涨跌</div><div class="iv"><span style='color:#c5221f'>▼5.79%</span></div></div>
+    <div class="ind-item"><div class="il">年涨跌</div><div class="iv"><span style='color:#c5221f'>▼9.71%</span></div></div>
+    <div class="ind-item"><div class="il">RSI(14)</div><div class="iv"><span style='color:#e37400'>39.4 超卖</span></div></div>
+    <div class="ind-item"><div class="il">MACD柱</div><div class="iv down">-0.0343 死叉</div></div>
+    <div class="ind-item"><div class="il">布林带位置</div><div class="iv">-14.7%</div></div>
+    <div class="ind-item"><div class="il">成交量</div><div class="iv">2,826,772</div></div>
+    <div class="ind-item"><div class="il">数据日期</div><div class="iv">2026-03-02</div></div>
   </div>
   <div class="section-title">均线系统</div>
   <table class="data-table">
     <thead><tr><th>均线</th><th>数值</th><th>偏离</th><th>信号</th></tr></thead>
-    <tbody><tr><td>MA5</td><td>¥64.29</td><td>-1.9%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA10</td><td>¥65.93</td><td>-4.3%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA20</td><td>¥65.97</td><td>-4.4%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA60</td><td>¥66.06</td><td>-4.5%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA120</td><td>¥61.98</td><td>+1.8%</td><td><span class="status status-success">↑ 多头</span></td></tr><tr><td>MA250</td><td>¥57.90</td><td>+9.0%</td><td><span class="status status-success">↑ 多头</span></td></tr></tbody>
+    <tbody><tr><td>MA5</td><td>¥22.42</td><td>-2.1%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA10</td><td>¥22.58</td><td>-2.8%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA20</td><td>¥22.71</td><td>-3.4%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA60</td><td>¥23.20</td><td>-5.4%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA120</td><td>¥24.55</td><td>-10.6%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA250</td><td>¥23.57</td><td>-6.9%</td><td><span class="status status-danger">↓ 空头</span></td></tr></tbody>
   </table>
   <div class="section-title">布林带</div>
   <div class="indicator-grid">
-    <div class="ind-item"><div class="il">上轨</div><div class="iv">¥69.29</div></div>
-    <div class="ind-item"><div class="il">中轨</div><div class="iv">¥65.97</div></div>
-    <div class="ind-item"><div class="il">下轨</div><div class="iv">¥62.65</div></div>
-    <div class="ind-item"><div class="il">价格位置</div><div class="iv">6.6%</div></div>
+    <div class="ind-item"><div class="il">上轨</div><div class="iv">¥23.31</div></div>
+    <div class="ind-item"><div class="il">中轨</div><div class="iv">¥22.71</div></div>
+    <div class="ind-item"><div class="il">下轨</div><div class="iv">¥22.12</div></div>
+    <div class="ind-item"><div class="il">价格位置</div><div class="iv">-14.7%</div></div>
   </div>
 </div>
 
@@ -354,7 +478,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 </div>
 <div class="footer">
-  <p>报告生成时间：2026-03-02 19:40 | 数据来源：Stooq历史数据</p>
+  <p>报告生成时间：2026-03-02 19:42 | 数据来源：Stooq历史数据</p>
   <p style="margin-top:8px;color:#d32f2f">免责声明：本报告仅供参考，不构成投资建议，股市有风险，投资需谨慎</p>
 </div>
 </body>
