@@ -2,295 +2,350 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>🇨🇳 A股盘前报告 · 2026-03-02</title>
 <style>
-:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--text2:#8b949e;
-  --up:#3fb950;--down:#f85149;--primary:#58a6ff;--gold:#ffd700}
+:root{--bg:#f8f9fa;--card:#fff;--border:#e8eaed;--primary:#d32f2f;--text1:#202124;--text2:#5f6368}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:16px}
-.header{background:linear-gradient(135deg,#0d1117,#161b22);border:1px solid var(--border);
-  border-radius:12px;padding:24px;margin-bottom:20px;text-align:center}
-.header h1{font-size:28px;background:linear-gradient(90deg,#ff6b35,#f7c59f,#efefd0);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
-.header .sub{color:var(--text2);font-size:14px}
-.section-title{font-size:16px;font-weight:600;color:var(--primary);margin:20px 0 12px;
-  padding-bottom:8px;border-bottom:1px solid var(--border)}
-.idx-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:20px}
-.idx-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center}
-.idx-name{font-size:13px;color:var(--text2);margin-bottom:6px}
-.idx-price{font-size:22px;font-weight:700;margin-bottom:4px}
-.idx-chg{font-size:15px;font-weight:600;margin-bottom:4px}
-.idx-detail{font-size:12px;color:var(--text2)}
-.up{color:var(--up)} .down{color:var(--down)}
-.stock-card{background:var(--card);border:1px solid var(--border);border-radius:12px;
-  padding:20px;margin-bottom:16px}
-.stock-card-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.medal{font-size:28px}
-.stock-name{font-size:18px;font-weight:700}
-.stock-sym{font-size:12px;color:var(--text2);margin-top:2px}
-.price{font-size:22px;font-weight:700}
-.chg{font-size:14px;font-weight:600}
-.reason-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
-.tag{background:rgba(88,166,255,.15);border:1px solid rgba(88,166,255,.3);
-  color:var(--primary);padding:3px 10px;border-radius:12px;font-size:12px}
-.ind-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:14px}
-.ind-cell{background:rgba(255,255,255,.03);border-radius:8px;padding:10px}
-.il{font-size:11px;color:var(--text2);margin-bottom:4px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text1);font-size:14px}
+.header{background:linear-gradient(135deg,#b71c1c,#d32f2f,#ffcdd2);color:#fff;padding:28px 24px}
+.header h1{font-size:28px;font-weight:700;margin-bottom:6px}
+.header p{opacity:.85;font-size:14px}
+.badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;background:rgba(255,255,255,.2);margin-right:8px}
+.container{max-width:1100px;margin:0 auto;padding:20px 16px}
+.card{background:var(--card);border-radius:12px;padding:20px 24px;margin-bottom:20px;box-shadow:0 1px 6px rgba(0,0,0,.08)}
+.card-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.card-header h2{font-size:18px;font-weight:600}
+.icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.icon-red{background:#fce8e6}.icon-blue{background:#e8f0fe}.icon-green{background:#e6f4ea}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.index-card{background:var(--bg);border-radius:10px;padding:16px;text-align:center;border:1px solid var(--border)}
+.index-name{font-size:13px;color:var(--text2);margin-bottom:8px}
+.index-price{font-size:24px;font-weight:700;margin-bottom:4px}
+.index-chg{font-size:16px;font-weight:600;margin-bottom:4px}
+.index-sub{font-size:12px;color:var(--text2)}
+.scan-table{width:100%;border-collapse:collapse}
+.scan-table th{background:#f1f3f4;padding:10px 12px;text-align:left;font-size:13px;color:var(--text2)}
+.scan-table td{padding:10px 12px;border-bottom:1px solid var(--border);font-size:13px}
+.scan-table tr:hover{background:#fafafa}
+.stock-section{background:var(--card);border-radius:12px;padding:24px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.1);border-left:4px solid #d32f2f}
+.stock-section-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+.stock-badge{background:#d32f2f;color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;white-space:nowrap}
+.stock-price-box{text-align:right}
+.sp{font-size:28px;font-weight:700}
+.up{color:#1e8e3e}.down{color:#c5221f}
+.section-title{font-size:15px;font-weight:600;color:#d32f2f;margin:16px 0 10px;padding-bottom:6px;border-bottom:2px solid #fce8e6}
+.indicator-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;margin-bottom:12px}
+.ind-item{background:#f8f9fa;border-radius:8px;padding:10px 12px;border:1px solid var(--border)}
+.il{font-size:12px;color:var(--text2);margin-bottom:4px}
 .iv{font-size:14px;font-weight:600}
-.targets{display:flex;gap:10px;flex-wrap:wrap}
-.target-box{padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600}
-.target-box.green{background:rgba(63,185,80,.15);border:1px solid rgba(63,185,80,.3);color:var(--up)}
-.target-box.blue{background:rgba(88,166,255,.15);border:1px solid rgba(88,166,255,.3);color:var(--primary)}
-.target-box.red{background:rgba(248,81,73,.15);border:1px solid rgba(248,81,73,.3);color:var(--down)}
-.scan-table{width:100%;border-collapse:collapse;background:var(--card);border-radius:10px;overflow:hidden}
-.scan-table th{background:#1c2128;color:var(--text2);font-size:12px;padding:10px 8px;text-align:center;
-  border-bottom:1px solid var(--border)}
-.scan-table td{padding:10px 8px;text-align:center;border-bottom:1px solid rgba(48,54,61,.5);font-size:13px}
-.scan-table tr:hover td{background:rgba(255,255,255,.03)}
-.risk-box{background:rgba(248,81,73,.08);border:1px solid rgba(248,81,73,.2);
-  border-radius:10px;padding:16px;margin-top:20px}
-.risk-box h4{color:var(--down);margin-bottom:10px}
-.risk-box li{color:var(--text2);font-size:13px;margin-bottom:6px;margin-left:16px}
-.footer{text-align:center;color:var(--text2);font-size:12px;margin-top:24px;padding-top:16px;
-  border-top:1px solid var(--border)}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:12px}
+.data-table th{background:#fce8e6;padding:8px 12px;text-align:left;color:#d32f2f;font-weight:600}
+.data-table td{padding:8px 12px;border-bottom:1px solid #fce8e6}
+.status{display:inline-block;padding:2px 8px;border-radius:10px;font-size:12px;font-weight:500}
+.status-success{background:#e6f4ea;color:#1e8e3e}
+.status-danger{background:#fce8e6;color:#c5221f}
+.status-warning{background:#fef7e0;color:#e37400}
+.status-info{background:#e8f0fe;color:#1967d2}
+.recommendation{background:linear-gradient(135deg,#b71c1c,#d32f2f);color:#fff;border-radius:12px;padding:20px 24px;margin-top:16px}
+.recommendation h3{font-size:16px;margin-bottom:8px}
+.verdict{font-size:20px;font-weight:700;margin-bottom:12px}
+.price-targets{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.price-target{background:rgba(255,255,255,.15);border-radius:8px;padding:12px;text-align:center}
+.price-target .label{font-size:12px;opacity:.8;margin-bottom:6px}
+.price-target .value{font-size:18px;font-weight:700}
+.risk-warning{background:#fff8e1;border:1px solid #f9a825;border-radius:10px;padding:16px 20px}
+.risk-warning h4{color:#f57f17;margin-bottom:10px}
+.risk-warning ul{padding-left:20px;color:#5d4037;line-height:1.8;font-size:13px}
+.footer{text-align:center;padding:24px;color:var(--text2);font-size:13px}
+.quick-links{display:flex;flex-wrap:wrap;gap:10px}
+.quick-link{display:inline-block;padding:8px 16px;background:#fce8e6;color:#d32f2f;border-radius:20px;text-decoration:none;font-size:13px;font-weight:500}
+.quick-link:hover{background:#d32f2f;color:#fff}
+@media(max-width:600px){.price-targets{grid-template-columns:1fr}.stock-section-header{flex-direction:column}}
 </style>
 </head>
 <body>
 <div class="header">
-  <div style="font-size:48px;margin-bottom:8px">🇨🇳</div>
-  <h1>A股盘前日报</h1>
-  <div class="sub">报告时间：2026-03-02 19:36:01 · 数据来源：Stooq</div>
-  <div class="sub" style="margin-top:6px">A股开盘时间：09:30 · 本报告于 09:20 前自动生成</div>
+  <h1>🇨🇳 A股盘前日报</h1>
+  <p>
+    <span class="badge">📅 2026-03-02</span>
+    <span class="badge">🕙 2026-03-02 19:38 北京时间</span>
+    <span class="badge">A股 9:30 开盘</span>
+  </p>
+</div>
+<div class="container">
+
+<div class="card">
+  <div class="card-header"><div class="icon icon-red">📈</div><h2>四大指数概览（昨收）</h2></div>
+  <div class="index-grid"></div>
 </div>
 
-<div class="section-title">📊 主要指数（昨日收盘）</div>
-<div class="idx-grid"></div>
-
-<div class="section-title">🏆 今日 TOP3 推荐标的</div>
-
-        <div class="stock-card">
-          <div class="stock-card-header">
-            <span class="medal">🥇</span>
-            <div>
-              <div class="stock-name">中国中免</div>
-              <div class="stock-sym">601888.CN · A股</div>
-            </div>
-            <div style="margin-left:auto;text-align:right">
-              <div class="price">¥80.58</div>
-              <div class="chg up">▲ 0.60%</div>
-            </div>
-          </div>
-          <div class="reason-tags"><span class="tag">RSI=35.9超卖区</span> <span class="tag">月跌-13.9%</span> <span class="tag">触及布林下轨</span> <span class="tag">站上年线</span></div>
-          <div class="ind-row">
-            <div class="ind-cell"><div class="il">RSI(14)</div><div class="iv"><span style='color:#e37400'>35.9 接近超卖</span></div></div>
-            <div class="ind-cell"><div class="il">MACD柱</div><div class="iv down">-1.744 死叉</div></div>
-            <div class="ind-cell"><div class="il">距52W高</div><div class="iv down">-19.3%</div></div>
-            <div class="ind-cell"><div class="il">月涨跌</div><div class="iv down">▼ 13.92%</div></div>
-          </div>
-          <div class="targets">
-            <div class="target-box green">💚 关注区 ¥76.55~80.58</div>
-            <div class="target-box blue">🎯 目标 ¥87.03</div>
-            <div class="target-box red">🛑 止损 ¥76.55</div>
-          </div>
-        </div>
-        <div class="stock-card">
-          <div class="stock-card-header">
-            <span class="medal">🥈</span>
-            <div>
-              <div class="stock-name">中国平安</div>
-              <div class="stock-sym">601318.CN · A股</div>
-            </div>
-            <div style="margin-left:auto;text-align:right">
-              <div class="price">¥63.09</div>
-              <div class="chg down">▼ 0.65%</div>
-            </div>
-          </div>
-          <div class="reason-tags"><span class="tag">RSI=33.5超卖区</span> <span class="tag">触及布林下轨</span> <span class="tag">站上年线</span></div>
-          <div class="ind-row">
-            <div class="ind-cell"><div class="il">RSI(14)</div><div class="iv"><span style='color:#e37400'>33.5 接近超卖</span></div></div>
-            <div class="ind-cell"><div class="il">MACD柱</div><div class="iv down">-0.426 死叉</div></div>
-            <div class="ind-cell"><div class="il">距52W高</div><div class="iv down">-15.7%</div></div>
-            <div class="ind-cell"><div class="il">月涨跌</div><div class="iv down">▼ 2.64%</div></div>
-          </div>
-          <div class="targets">
-            <div class="target-box green">💚 关注区 ¥62.65~63.09</div>
-            <div class="target-box blue">🎯 目标 ¥68.14</div>
-            <div class="target-box red">🛑 止损 ¥59.94</div>
-          </div>
-        </div>
-        <div class="stock-card">
-          <div class="stock-card-header">
-            <span class="medal">🥉</span>
-            <div>
-              <div class="stock-name">恒瑞医药</div>
-              <div class="stock-sym">600276.CN · A股</div>
-            </div>
-            <div style="margin-left:auto;text-align:right">
-              <div class="price">¥56.56</div>
-              <div class="chg down">▼ 0.28%</div>
-            </div>
-          </div>
-          <div class="reason-tags"><span class="tag">MACD金叉✅</span> <span class="tag">距高点-23.6%回调</span> <span class="tag">触及布林下轨</span></div>
-          <div class="ind-row">
-            <div class="ind-cell"><div class="il">RSI(14)</div><div class="iv"><span style='color:#137333'>40.1 中性</span></div></div>
-            <div class="ind-cell"><div class="il">MACD柱</div><div class="iv up">+0.019 金叉✅</div></div>
-            <div class="ind-cell"><div class="il">距52W高</div><div class="iv down">-23.6%</div></div>
-            <div class="ind-cell"><div class="il">月涨跌</div><div class="iv down">▼ 4.85%</div></div>
-          </div>
-          <div class="targets">
-            <div class="target-box green">💚 关注区 ¥56.20~56.56</div>
-            <div class="target-box blue">🎯 目标 ¥61.08</div>
-            <div class="target-box red">🛑 止损 ¥53.73</div>
-          </div>
-        </div>
-
-<div class="section-title">📋 全市场扫描（18只标的）</div>
-<div style="overflow-x:auto">
-<table class="scan-table">
-  <thead>
-    <tr>
-      <th>名称</th><th>最新价</th><th>日涨跌</th><th>周涨跌</th><th>月涨跌</th>
-      <th>RSI(14)</th><th>MACD柱</th><th>距52W高</th><th>成交量</th>
-    </tr>
-  </thead>
-  <tbody><tr><td>上证综指</td><td colspan='8' style='color:#999'>数据获取失败</td></tr><tr><td>深证成指</td><td colspan='8' style='color:#999'>数据获取失败</td></tr><tr><td>沪深300</td><td colspan='8' style='color:#999'>数据获取失败</td></tr><tr>
-          <td><strong>贵州茅台</strong><br><small style='color:#999'>600519.CN</small></td>
-          <td>¥1455.02</td>
-          <td class="down">▼ 0.76%</td>
-          <td class="down">▼ 2.12%</td>
-          <td class="up">▲ 8.58%</td>
-          <td><span style='color:#137333'>58.3 中性</span></td>
-          <td class="down">-3.198</td>
-          <td class="down">-12.2%</td>
-          <td>3,216,016</td>
-        </tr><tr>
-          <td><strong>中国平安</strong><br><small style='color:#999'>601318.CN</small></td>
-          <td>¥63.09</td>
-          <td class="down">▼ 0.65%</td>
-          <td class="down">▼ 5.18%</td>
-          <td class="down">▼ 2.64%</td>
-          <td><span style='color:#e37400'>33.5 接近超卖</span></td>
-          <td class="down">-0.426</td>
-          <td class="down">-15.7%</td>
-          <td>63,301,213</td>
-        </tr><tr>
-          <td><strong>招商银行</strong><br><small style='color:#999'>600036.CN</small></td>
-          <td>¥38.75</td>
-          <td class="up">▲ 0.13%</td>
-          <td class="down">▼ 0.64%</td>
-          <td class="up">▲ 2.38%</td>
-          <td><span style='color:#137333'>51.2 中性</span></td>
-          <td class="up">+0.086</td>
-          <td class="down">-20.2%</td>
-          <td>63,703,472</td>
-        </tr><tr>
-          <td><strong>恒瑞医药</strong><br><small style='color:#999'>600276.CN</small></td>
-          <td>¥56.56</td>
-          <td class="down">▼ 0.28%</td>
-          <td class="down">▼ 3.71%</td>
-          <td class="down">▼ 4.85%</td>
-          <td><span style='color:#137333'>40.1 中性</span></td>
-          <td class="up">+0.019</td>
-          <td class="down">-23.6%</td>
-          <td>36,364,110</td>
-        </tr><tr>
-          <td><strong>中国中免</strong><br><small style='color:#999'>601888.CN</small></td>
-          <td>¥80.58</td>
-          <td class="up">▲ 0.60%</td>
-          <td class="down">▼ 14.43%</td>
-          <td class="down">▼ 13.92%</td>
-          <td><span style='color:#e37400'>35.9 接近超卖</span></td>
-          <td class="down">-1.744</td>
-          <td class="down">-19.3%</td>
-          <td>28,587,504</td>
-        </tr><tr>
-          <td><strong>海天味业</strong><br><small style='color:#999'>603288.CN</small></td>
-          <td>¥35.96</td>
-          <td class="up">▲ 0.33%</td>
-          <td class="up">▲ 0.06%</td>
-          <td class="down">▼ 0.50%</td>
-          <td><span style='color:#137333'>55.4 中性</span></td>
-          <td class="down">-0.017</td>
-          <td class="down">-21.4%</td>
-          <td>11,864,913</td>
-        </tr><tr>
-          <td><strong>长江电力</strong><br><small style='color:#999'>600900.CN</small></td>
-          <td>¥26.04</td>
-          <td class="">— 0.00%</td>
-          <td class="down">▼ 0.31%</td>
-          <td class="down">▼ 1.03%</td>
-          <td><span style='color:#137333'>41.9 中性</span></td>
-          <td class="up">+0.016</td>
-          <td class="down">-16.5%</td>
-          <td>91,903,782</td>
-        </tr><tr>
-          <td><strong>紫金矿业</strong><br><small style='color:#999'>601899.CN</small></td>
-          <td>¥39.55</td>
-          <td class="up">▲ 0.46%</td>
-          <td class="down">▼ 0.50%</td>
-          <td class="up">▲ 5.02%</td>
-          <td><span style='color:#137333'>48.0 中性</span></td>
-          <td class="down">-0.151</td>
-          <td class="down">-12.0%</td>
-          <td>242,060,189</td>
-        </tr><tr>
-          <td><strong>兴业银行</strong><br><small style='color:#999'>601166.CN</small></td>
-          <td>¥18.31</td>
-          <td class="up">▲ 0.33%</td>
-          <td class="down">▼ 1.51%</td>
-          <td class="down">▼ 5.37%</td>
-          <td><span style='color:#137333'>40.3 中性</span></td>
-          <td class="down">-0.000</td>
-          <td class="down">-28.1%</td>
-          <td>87,003,521</td>
-        </tr><tr>
-          <td><strong>万华化学</strong><br><small style='color:#999'>600309.CN</small></td>
-          <td>¥93.00</td>
-          <td class="up">▲ 3.31%</td>
-          <td class="up">▲ 5.68%</td>
-          <td class="up">▲ 9.03%</td>
-          <td><span style='color:#137333'>57.7 中性</span></td>
-          <td class="up">+0.257</td>
-          <td class="down">-1.4%</td>
-          <td>46,742,493</td>
-        </tr><tr>
-          <td><strong>伊利股份</strong><br><small style='color:#999'>600887.CN</small></td>
-          <td>¥26.08</td>
-          <td class="down">▼ 0.15%</td>
-          <td class="down">▼ 1.99%</td>
-          <td class="down">▼ 2.72%</td>
-          <td><span style='color:#137333'>44.2 中性</span></td>
-          <td class="down">-0.015</td>
-          <td class="down">-16.2%</td>
-          <td>39,534,029</td>
-        </tr><tr>
-          <td><strong>中信证券</strong><br><small style='color:#999'>600030.CN</small></td>
-          <td>¥27.37</td>
-          <td class="down">▼ 0.04%</td>
-          <td class="down">▼ 1.79%</td>
-          <td class="down">▼ 1.97%</td>
-          <td><span style='color:#e37400'>32.7 接近超卖</span></td>
-          <td class="down">-0.057</td>
-          <td class="down">-15.9%</td>
-          <td>87,758,758</td>
-        </tr><tr><td>五粮液</td><td colspan='8' style='color:#999'>数据获取失败</td></tr><tr><td>宁德时代</td><td colspan='8' style='color:#999'>数据获取失败</td></tr><tr><td>美的集团</td><td colspan='8' style='color:#999'>数据获取失败</td></tr><tr><td>比亚迪</td><td colspan='8' style='color:#999'>数据获取失败</td></tr><tr><td>平安银行</td><td colspan='8' style='color:#999'>数据获取失败</td></tr><tr><td>东方财富</td><td colspan='8' style='color:#999'>数据获取失败</td></tr></tbody>
-</table>
+<div class="card">
+  <div class="card-header"><div class="icon icon-blue">🔍</div><h2>全市场扫描（9 只标的）</h2></div>
+  <div style="overflow-x:auto">
+  <table class="scan-table">
+    <thead><tr>
+      <th>股票</th><th>最新价</th><th>日涨跌</th><th>周涨跌</th><th>月涨跌</th>
+      <th>RSI14</th><th>MACD柱</th><th>距52W高</th><th>评分</th>
+    </tr></thead>
+    <tbody><tr>
+                <td><strong>贵州茅台</strong><br><span style='color:#999;font-size:12px'>600519.CN</span></td>
+                <td>¥1455.02</td>
+                <td style="color:#c5221f">-0.76%</td>
+                <td style="color:#c5221f">-2.12%</td>
+                <td style="color:#1e8e3e">+8.58%</td>
+                <td style="color:#333">58.3</td>
+                <td style="color:#c5221f">-3.1982</td>
+                <td style="color:#c5221f">-12.2%</td>
+                <td><span style="background:#999;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px">0分</span></td>
+            </tr><tr>
+                <td><strong>中国平安</strong><br><span style='color:#999;font-size:12px'>601318.CN</span></td>
+                <td>¥63.09</td>
+                <td style="color:#c5221f">-0.65%</td>
+                <td style="color:#c5221f">-5.18%</td>
+                <td style="color:#c5221f">-2.64%</td>
+                <td style="color:#e37400">33.5</td>
+                <td style="color:#c5221f">-0.4257</td>
+                <td style="color:#c5221f">-15.7%</td>
+                <td><span style="background:#e37400;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px">3分</span></td>
+            </tr><tr>
+                <td><strong>招商银行</strong><br><span style='color:#999;font-size:12px'>600036.CN</span></td>
+                <td>¥38.75</td>
+                <td style="color:#1e8e3e">+0.13%</td>
+                <td style="color:#c5221f">-0.64%</td>
+                <td style="color:#1e8e3e">+2.38%</td>
+                <td style="color:#333">51.2</td>
+                <td style="color:#1e8e3e">+0.0863</td>
+                <td style="color:#c5221f">-20.2%</td>
+                <td><span style="background:#e37400;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px">3分</span></td>
+            </tr><tr>
+                <td><strong>兴业银行</strong><br><span style='color:#999;font-size:12px'>601166.CN</span></td>
+                <td>¥18.31</td>
+                <td style="color:#1e8e3e">+0.33%</td>
+                <td style="color:#c5221f">-1.51%</td>
+                <td style="color:#c5221f">-5.37%</td>
+                <td style="color:#333">40.3</td>
+                <td style="color:#c5221f">-0.0004</td>
+                <td style="color:#c5221f">-28.1%</td>
+                <td><span style="background:#e37400;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px">3分</span></td>
+            </tr><tr>
+                <td><strong>长江电力</strong><br><span style='color:#999;font-size:12px'>600900.CN</span></td>
+                <td>¥26.04</td>
+                <td style="color:#1e8e3e">+0.00%</td>
+                <td style="color:#c5221f">-0.31%</td>
+                <td style="color:#c5221f">-1.03%</td>
+                <td style="color:#333">41.9</td>
+                <td style="color:#1e8e3e">+0.0164</td>
+                <td style="color:#c5221f">-16.5%</td>
+                <td><span style="background:#e37400;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px">3分</span></td>
+            </tr><tr>
+                <td><strong>中国中免</strong><br><span style='color:#999;font-size:12px'>601888.CN</span></td>
+                <td>¥80.58</td>
+                <td style="color:#1e8e3e">+0.60%</td>
+                <td style="color:#c5221f">-14.43%</td>
+                <td style="color:#c5221f">-13.92%</td>
+                <td style="color:#e37400">35.9</td>
+                <td style="color:#c5221f">-1.7439</td>
+                <td style="color:#c5221f">-19.3%</td>
+                <td><span style="background:#e37400;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px">4分</span></td>
+            </tr><tr>
+                <td><strong>恒瑞医药</strong><br><span style='color:#999;font-size:12px'>600276.CN</span></td>
+                <td>¥56.56</td>
+                <td style="color:#c5221f">-0.28%</td>
+                <td style="color:#c5221f">-3.71%</td>
+                <td style="color:#c5221f">-4.85%</td>
+                <td style="color:#333">40.1</td>
+                <td style="color:#1e8e3e">+0.0193</td>
+                <td style="color:#c5221f">-23.6%</td>
+                <td><span style="background:#e37400;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px">5分</span></td>
+            </tr><tr>
+                <td><strong>隆基绿能</strong><br><span style='color:#999;font-size:12px'>601012.CN</span></td>
+                <td>¥18.32</td>
+                <td style="color:#1e8e3e">+0.27%</td>
+                <td style="color:#c5221f">-0.92%</td>
+                <td style="color:#1e8e3e">+4.15%</td>
+                <td style="color:#333">53.8</td>
+                <td style="color:#c5221f">-0.0294</td>
+                <td style="color:#c5221f">-22.3%</td>
+                <td><span style="background:#999;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px">1分</span></td>
+            </tr><tr>
+                <td><strong>中信证券</strong><br><span style='color:#999;font-size:12px'>600030.CN</span></td>
+                <td>¥27.37</td>
+                <td style="color:#c5221f">-0.04%</td>
+                <td style="color:#c5221f">-1.79%</td>
+                <td style="color:#c5221f">-1.97%</td>
+                <td style="color:#e37400">32.7</td>
+                <td style="color:#c5221f">-0.0568</td>
+                <td style="color:#c5221f">-15.9%</td>
+                <td><span style="background:#e37400;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px">3分</span></td>
+            </tr></tbody>
+  </table>
+  </div>
 </div>
 
-<div class="risk-box">
-  <h4>⚠️ 风险提示</h4>
-  <ul>
-    <li>A股市场受政策面影响较大，关注央行、证监会等监管动态</li>
-    <li>技术指标仅供参考，不构成买卖依据，投资需结合基本面综合判断</li>
-    <li>本报告数据截至上一个交易日收盘，今日实时行情请参考实时平台</li>
-    <li>股市有风险，投资需谨慎，本报告不构成任何投资建议</li>
-  </ul>
+<div class="card">
+  <div class="card-header"><div class="icon icon-red">🏆</div><h2>今日 TOP3 推荐股票</h2></div>
+  <p style="color:var(--text2);font-size:13px;margin-bottom:16px">基于技术指标综合评分，筛选出最具关注价值的标的</p>
 </div>
 
+
+<div class="stock-section">
+  <div class="stock-section-header">
+    <span class="stock-badge">🥇 推荐#1</span>
+    <div>
+      <div style="font-size:20px;font-weight:bold">恒瑞医药</div>
+      <div style="color:var(--text2);font-size:13px">A股: 600276.CN · MACD金叉 · 距高-23.6% · 近布林下轨</div>
+    </div>
+    <div class="stock-price-box" style="margin-left:auto">
+      <div class="sp down">¥56.56</div>
+      <div style="color:#ea4335;font-size:13px"><span style='color:#c5221f'>▼0.28%</span> 昨收</div>
+    </div>
+  </div>
+  <div class="section-title">关键行情数据</div>
+  <div class="indicator-grid">
+    <div class="ind-item"><div class="il">最新价</div><div class="iv">¥56.56</div></div>
+    <div class="ind-item"><div class="il">昨收</div><div class="iv">¥56.72</div></div>
+    <div class="ind-item"><div class="il">52周最高</div><div class="iv">¥74.04</div></div>
+    <div class="ind-item"><div class="il">52周最低</div><div class="iv">¥44.06</div></div>
+    <div class="ind-item"><div class="il">距高点</div><div class="iv down">-23.6%</div></div>
+    <div class="ind-item"><div class="il">日涨跌</div><div class="iv"><span style='color:#c5221f'>▼0.28%</span></div></div>
+    <div class="ind-item"><div class="il">周涨跌</div><div class="iv"><span style='color:#c5221f'>▼3.71%</span></div></div>
+    <div class="ind-item"><div class="il">月涨跌</div><div class="iv"><span style='color:#c5221f'>▼4.85%</span></div></div>
+    <div class="ind-item"><div class="il">年涨跌</div><div class="iv"><span style='color:#1e8e3e'>▲26.70%</span></div></div>
+    <div class="ind-item"><div class="il">RSI(14)</div><div class="iv"><span style='color:#1e8e3e'>40.1 中性</span></div></div>
+    <div class="ind-item"><div class="il">MACD柱</div><div class="iv up">+0.0193 金叉✅</div></div>
+    <div class="ind-item"><div class="il">布林带位置</div><div class="iv">11.5%</div></div>
+    <div class="ind-item"><div class="il">成交量</div><div class="iv">36,364,110</div></div>
+    <div class="ind-item"><div class="il">数据日期</div><div class="iv">2026-02-27</div></div>
+  </div>
+  <div class="section-title">均线系统</div>
+  <table class="data-table">
+    <thead><tr><th>均线</th><th>数值</th><th>偏离</th><th>信号</th></tr></thead>
+    <tbody><tr><td>MA5</td><td>¥57.48</td><td>-1.6%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA10</td><td>¥57.82</td><td>-2.2%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA20</td><td>¥57.75</td><td>-2.1%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA60</td><td>¥60.47</td><td>-6.5%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA120</td><td>¥63.31</td><td>-10.7%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA250</td><td>¥57.93</td><td>-2.4%</td><td><span class="status status-danger">↓ 空头</span></td></tr></tbody>
+  </table>
+  <div class="section-title">布林带</div>
+  <div class="indicator-grid">
+    <div class="ind-item"><div class="il">上轨</div><div class="iv">¥59.30</div></div>
+    <div class="ind-item"><div class="il">中轨</div><div class="iv">¥57.75</div></div>
+    <div class="ind-item"><div class="il">下轨</div><div class="iv">¥56.20</div></div>
+    <div class="ind-item"><div class="il">价格位置</div><div class="iv">11.5%</div></div>
+  </div>
+</div>
+<div class="stock-section">
+  <div class="stock-section-header">
+    <span class="stock-badge">🥈 推荐#2</span>
+    <div>
+      <div style="font-size:20px;font-weight:bold">中国中免</div>
+      <div style="color:var(--text2);font-size:13px">A股: 601888.CN · RSI=35.9超卖 · 月跌-13.9%超跌 · 近布林下轨</div>
+    </div>
+    <div class="stock-price-box" style="margin-left:auto">
+      <div class="sp up">¥80.58</div>
+      <div style="color:#1e8e3e;font-size:13px"><span style='color:#1e8e3e'>▲0.60%</span> 昨收</div>
+    </div>
+  </div>
+  <div class="section-title">关键行情数据</div>
+  <div class="indicator-grid">
+    <div class="ind-item"><div class="il">最新价</div><div class="iv">¥80.58</div></div>
+    <div class="ind-item"><div class="il">昨收</div><div class="iv">¥80.10</div></div>
+    <div class="ind-item"><div class="il">52周最高</div><div class="iv">¥99.81</div></div>
+    <div class="ind-item"><div class="il">52周最低</div><div class="iv">¥54.75</div></div>
+    <div class="ind-item"><div class="il">距高点</div><div class="iv down">-19.3%</div></div>
+    <div class="ind-item"><div class="il">日涨跌</div><div class="iv"><span style='color:#1e8e3e'>▲0.60%</span></div></div>
+    <div class="ind-item"><div class="il">周涨跌</div><div class="iv"><span style='color:#c5221f'>▼14.43%</span></div></div>
+    <div class="ind-item"><div class="il">月涨跌</div><div class="iv"><span style='color:#c5221f'>▼13.92%</span></div></div>
+    <div class="ind-item"><div class="il">年涨跌</div><div class="iv"><span style='color:#1e8e3e'>▲29.99%</span></div></div>
+    <div class="ind-item"><div class="il">RSI(14)</div><div class="iv"><span style='color:#e37400'>35.9 超卖</span></div></div>
+    <div class="ind-item"><div class="il">MACD柱</div><div class="iv down">-1.7439 死叉</div></div>
+    <div class="ind-item"><div class="il">布林带位置</div><div class="iv">-0.0%</div></div>
+    <div class="ind-item"><div class="il">成交量</div><div class="iv">28,587,504</div></div>
+    <div class="ind-item"><div class="il">数据日期</div><div class="iv">2026-02-27</div></div>
+  </div>
+  <div class="section-title">均线系统</div>
+  <table class="data-table">
+    <thead><tr><th>均线</th><th>数值</th><th>偏离</th><th>信号</th></tr></thead>
+    <tbody><tr><td>MA5</td><td>¥84.52</td><td>-4.7%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA10</td><td>¥89.83</td><td>-10.3%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA20</td><td>¥90.56</td><td>-11.0%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA60</td><td>¥88.03</td><td>-8.5%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA120</td><td>¥80.93</td><td>-0.4%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA250</td><td>¥71.50</td><td>+12.7%</td><td><span class="status status-success">↑ 多头</span></td></tr></tbody>
+  </table>
+  <div class="section-title">布林带</div>
+  <div class="indicator-grid">
+    <div class="ind-item"><div class="il">上轨</div><div class="iv">¥100.53</div></div>
+    <div class="ind-item"><div class="il">中轨</div><div class="iv">¥90.56</div></div>
+    <div class="ind-item"><div class="il">下轨</div><div class="iv">¥80.58</div></div>
+    <div class="ind-item"><div class="il">价格位置</div><div class="iv">-0.0%</div></div>
+  </div>
+</div>
+<div class="stock-section">
+  <div class="stock-section-header">
+    <span class="stock-badge">🥉 推荐#3</span>
+    <div>
+      <div style="font-size:20px;font-weight:bold">中国平安</div>
+      <div style="color:var(--text2);font-size:13px">A股: 601318.CN · RSI=33.5超卖 · 近布林下轨</div>
+    </div>
+    <div class="stock-price-box" style="margin-left:auto">
+      <div class="sp down">¥63.09</div>
+      <div style="color:#ea4335;font-size:13px"><span style='color:#c5221f'>▼0.65%</span> 昨收</div>
+    </div>
+  </div>
+  <div class="section-title">关键行情数据</div>
+  <div class="indicator-grid">
+    <div class="ind-item"><div class="il">最新价</div><div class="iv">¥63.09</div></div>
+    <div class="ind-item"><div class="il">昨收</div><div class="iv">¥63.50</div></div>
+    <div class="ind-item"><div class="il">52周最高</div><div class="iv">¥74.88</div></div>
+    <div class="ind-item"><div class="il">52周最低</div><div class="iv">¥47.00</div></div>
+    <div class="ind-item"><div class="il">距高点</div><div class="iv down">-15.7%</div></div>
+    <div class="ind-item"><div class="il">日涨跌</div><div class="iv"><span style='color:#c5221f'>▼0.65%</span></div></div>
+    <div class="ind-item"><div class="il">周涨跌</div><div class="iv"><span style='color:#c5221f'>▼5.18%</span></div></div>
+    <div class="ind-item"><div class="il">月涨跌</div><div class="iv"><span style='color:#c5221f'>▼2.64%</span></div></div>
+    <div class="ind-item"><div class="il">年涨跌</div><div class="iv"><span style='color:#1e8e3e'>▲23.66%</span></div></div>
+    <div class="ind-item"><div class="il">RSI(14)</div><div class="iv"><span style='color:#e37400'>33.5 超卖</span></div></div>
+    <div class="ind-item"><div class="il">MACD柱</div><div class="iv down">-0.4257 死叉</div></div>
+    <div class="ind-item"><div class="il">布林带位置</div><div class="iv">6.6%</div></div>
+    <div class="ind-item"><div class="il">成交量</div><div class="iv">63,301,213</div></div>
+    <div class="ind-item"><div class="il">数据日期</div><div class="iv">2026-02-27</div></div>
+  </div>
+  <div class="section-title">均线系统</div>
+  <table class="data-table">
+    <thead><tr><th>均线</th><th>数值</th><th>偏离</th><th>信号</th></tr></thead>
+    <tbody><tr><td>MA5</td><td>¥64.29</td><td>-1.9%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA10</td><td>¥65.93</td><td>-4.3%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA20</td><td>¥65.97</td><td>-4.4%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA60</td><td>¥66.06</td><td>-4.5%</td><td><span class="status status-danger">↓ 空头</span></td></tr><tr><td>MA120</td><td>¥61.98</td><td>+1.8%</td><td><span class="status status-success">↑ 多头</span></td></tr><tr><td>MA250</td><td>¥57.90</td><td>+9.0%</td><td><span class="status status-success">↑ 多头</span></td></tr></tbody>
+  </table>
+  <div class="section-title">布林带</div>
+  <div class="indicator-grid">
+    <div class="ind-item"><div class="il">上轨</div><div class="iv">¥69.29</div></div>
+    <div class="ind-item"><div class="il">中轨</div><div class="iv">¥65.97</div></div>
+    <div class="ind-item"><div class="il">下轨</div><div class="iv">¥62.65</div></div>
+    <div class="ind-item"><div class="il">价格位置</div><div class="iv">6.6%</div></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="risk-warning">
+    <h4>⚠️ 风险提示</h4>
+    <ul>
+      <li>A股受政策面影响较大，需密切关注监管政策、货币政策及重大会议动向</li>
+      <li>A股存在涨跌停板制度（±10%，ST股±5%），流动性风险需关注</li>
+      <li>技术分析基于历史数据，不代表未来走势，超跌不等于趋势反转</li>
+      <li>数据截至最近一个交易日收盘，盘前竞价数据请参考东方财富或同花顺</li>
+      <li>⚠️ 本报告仅供参考，不构成任何投资建议，投资者需自行承担风险</li>
+    </ul>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header"><div class="icon icon-blue">🔗</div><h2>快捷链接</h2></div>
+  <div class="quick-links">
+    <a href="https://quote.eastmoney.com/center/gridlist.html#hs_a_board" target="_blank" class="quick-link">📊 A股行情中心</a>
+    <a href="https://quote.eastmoney.com/sh600519.html" target="_blank" class="quick-link">📊 贵州茅台</a>
+    <a href="https://quote.eastmoney.com/sz300750.html" target="_blank" class="quick-link">📊 宁德时代</a>
+    <a href="https://quote.eastmoney.com/sz002594.html" target="_blank" class="quick-link">📊 比亚迪</a>
+    <a href="https://quote.eastmoney.com/sh601318.html" target="_blank" class="quick-link">📊 中国平安</a>
+    <a href="https://stooq.com/q/?s=%5Eshcomp" target="_blank" class="quick-link">📈 上证指数图表</a>
+    <a href="https://xueqiu.com/" target="_blank" class="quick-link">🌐 雪球</a>
+  </div>
+</div>
+
+</div>
 <div class="footer">
-  <p>报告生成时间：2026-03-02 19:36:01 · 数据来源：Stooq历史数据</p>
-  <p style="margin-top:6px">🇨🇳 A股盘前日报 · Powered by GitHub Pages · 每个交易日 09:20 自动更新</p>
+  <p>报告生成时间：2026-03-02 19:38 | 数据来源：Stooq历史数据</p>
+  <p style="margin-top:8px;color:#d32f2f">免责声明：本报告仅供参考，不构成投资建议，股市有风险，投资需谨慎</p>
 </div>
 </body>
 </html>
